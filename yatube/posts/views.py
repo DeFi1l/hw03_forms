@@ -7,7 +7,7 @@ from .utils import get_paginator
 
 
 def index(request):
-    post_list = Post.objects.all().order_by('-pub_date')
+    post_list = Post.objects.all()
     page_obj = get_paginator(request, post_list)
     context = {
         'page_obj': page_obj,
